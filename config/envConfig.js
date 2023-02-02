@@ -3,5 +3,5 @@ require('dotenv').config()
 module.exports= {
     PORT : process.env.PORT,
     DB_URL:process.env.DB_URL,
-    JWT_SECRE: process.env.JWT
+    JWT_SECRE: process.env.JWT,
 }

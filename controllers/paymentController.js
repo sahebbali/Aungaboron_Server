@@ -103,7 +103,18 @@ class PaymentController {
         let customer = await stripe.customers.retrieve(data.customer);
         customer = JSON.parse(customer?.metadata?.cart);
         customer.forEach(async (ctr) => {
+          let reviewStatus = false;
+            const findOrder = await OrderModel.findOne({
+              productId: ctr._id,
+              userId: ctr.userId,
+            })
+              .where("review")
+              .equals(true);
+            if (findOrder) {
+              reviewStatus = true;
+            }
           try {
+            
             await OrderModel.create({
               productId: ctr._id,
               userId: ctr.userId,
@@ -111,6 +122,7 @@ class PaymentController {
               color: ctr.color,
               quantities: ctr.quantity,
               address: data.customer_details.address,
+              review: reviewStatus,
             });
             const product = await ProductModel.findOne({ _id: ctr._id });
             if (product) {
