@@ -24,7 +24,7 @@ app.use(express.json());
 
 
 app.get('/',(req,res)=>{
-    res.json({msg:'Wellcome ot Gocery'})
+    res.json({msg:'Wellcome ot Aungaboron'})
 })
 
 app.use("/api",userRoutes);
