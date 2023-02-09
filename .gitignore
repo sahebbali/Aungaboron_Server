@@ -5,11 +5,7 @@
 /.pnp
 .pnp.js
 .env
-package.json 
 
-package-lock.json
-
-.gitignore
 # testing
 /coverage
 
