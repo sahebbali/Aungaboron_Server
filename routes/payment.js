@@ -1,5 +1,5 @@
 const express = require("express");
-const PaymentController = require("../controllers/PaymentController");
+const PaymentController = require("../controllers/paymentController.js");
 const Authorization = require("../servicess/Authorization");
 const router = express.Router();
 router.post("/create-checkout-session",Authorization.authorized, PaymentController.paymentProcess);
