@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+mongoose.set('strictQuery', false);
 const env =require("./envConfig");
 URL = 'mongodb+srv://sahebali3:sahebali3@saheb.s47ob79.mongodb.net/?retryWrites=true&w=majority'
 const connect = async ()=>{
