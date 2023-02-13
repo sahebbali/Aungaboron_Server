@@ -2,6 +2,7 @@ const stripe = require("stripe")(process.env.STRIPE_KEY);
 const User = require("../models/User");
 const OrderModel = require("../models/OrderModel");
 const ProductModel = require("../models/ProductModel");
+console.log(process.env.STRIPE_KEY);
 class PaymentController {
   async paymentProcess(req, res, next) {
     const { cart, id } = req.body;

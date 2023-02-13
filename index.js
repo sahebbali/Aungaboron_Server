@@ -27,11 +27,11 @@ app.get('/',(req,res)=>{
     res.json({msg:'Wellcome ot Aungaboron'})
 })
 
-app.use("/api",userRoutes);
-app.use("/api",categoryRoutes);
-app.use("/api",productRoutes);
-app.use("/api",paymentRoutes);
-app.use("/api", orderRoutes);
+app.use(userRoutes);
+app.use(categoryRoutes);
+app.use(productRoutes);
+app.use(paymentRoutes);
+app.use(orderRoutes);
 
 const port=env.PORT || 5000;
 
